@@ -73,12 +73,14 @@
 
     <!-- Each Task -->
      <div id="tasks">
-      <h1>The Tasks</h1>
-      <div data-bind="foreach: tasks">
-        <h3 data-bind="text: description, click:$root.modifyTask"></h3>
-        <p data-bind="text: status, click:$root.modifyTask"></p>
-        <p data-bind="text: assignedTo, click:$root.modifyTask"></p>
-      </div>
+      <h1>Tasks</h1>
+      <section data-bind="foreach: tasks">
+        <div class=" col-sm-3">
+          <h3 data-bind="text: description, click:$root.modifyTask"></h3>
+          <p data-bind="text: status, click:$root.modifyTask"></p>
+          <p data-bind="text: assignedTo, click:$root.modifyTask"></p>
+        </div>
+      </section>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>

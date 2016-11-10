@@ -1,6 +1,7 @@
 $font-stack:  'Source Sans Pro', sans-serif;
 $light-text: #FFFFFF;
 $padding: 17%;
+$light-padding: 7%;
 $border: 1px solid #D3D3D3;
 $dark-red: #891717;
 $section-padding: 100px 150px;
@@ -19,7 +20,6 @@ body{
 }
 ul{
   padding: 5px $padding;
-
   li {
     display: inline-block;
     *display:inline;
@@ -62,5 +62,21 @@ ul{
 
 #tasks {
   @extend .row;
+  margin-bottom: $padding;
+  border-bottom: none;
+  h1{
+    font-size: 48px;
+  }
+  section{
+      margin: $light-padding;
+      div{
+        display: inline-block;
+        *display:inline;
+        padding: 20px;
+        margin: 10px;
+        border: $border;
+      }
+  }
 }
+
 

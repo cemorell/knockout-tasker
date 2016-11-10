@@ -52,4 +52,18 @@ ul {
   text-align: center;
   border-bottom: 1px solid #D3D3D3; }
 
+#tasks {
+  margin-bottom: 17%;
+  border-bottom: none; }
+  #tasks h1 {
+    font-size: 48px; }
+  #tasks section {
+    margin: 7%; }
+    #tasks section div {
+      display: inline-block;
+      *display: inline;
+      padding: 20px;
+      margin: 10px;
+      border: 1px solid #D3D3D3; }
+
 /*# sourceMappingURL=style.css.map */
