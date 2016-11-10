@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css" media="screen" title="no title">
+    <title>Morell Holiday Tasker</title>
+  </head>
+  <body>
+    <!-- Hero Landing -->
+    <div id="hero">
+      <h1>The Morell</h1><h2> Holiday Tasker</h2>
+    </div>
+
+    <!-- Each member -->
+    <ul data-bind="foreach: members">
+      <li data-bind="text: fullName, click:$root.modifyMember"></li>
+    </ul>
+
+    <div class="row">
+
+    <!-- Family/Friend MEMBER Form -->
+      <form class="form-horizontal col-md-6 col-sm-12" data-bind="submit: saveMember">
+        <h2>Add Family </h2>
+        <div class="form-group">
+          <label for="inputFirstName3" class="col-sm-4 control-label">First Name</label>
+          <div class="col-md-6 col-sm-8">
+            <input type="text" class="form-control" data-bind="value: currentMember().firstName" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputLastName3" class="col-sm-4 control-label">Last Name</label>
+          <div class="col-md-6 col-sm-8">
+            <input type="last name" class="form-control" data-bind="value: currentMember().lastName" />
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-6">
+            <button type="submit" class="btn">Save</button>
+          </div>
+        </div>
+      </form>
+
+      <!-- Holiday TASK Form -->
+      <form class="form-horizontal col-md-6 col-sm-12" data-bind="submit: saveTask, with: currentTask">
+      <h2>Add a Task</h2>
+        <div class="form-group">
+          <label for="inputFirstName3" class="col-sm-4 control-label">Description</label>
+          <div class="col-md-6 col-sm-8">
+            <input type="text" class="form-control" data-bind="value: description" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputFirstName3" class="col-sm-4 control-label">Status</label>
+          <div class="col-md-6 col-sm-8 ">
+            <input type="text" class="form-control" data-bind="value: status" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="inputLastName3" class="col-sm-4 control-label">Assign to</label>
+          <div class="col-sm-8 col-md-6">
+            <select class="form-control" data-bind="options: $root.members, optionsText: 'fullName', value: assignedTo.firstName"></select>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-6">
+            <button type="submit" class="btn">Save</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Each Task -->
+     <div id="tasks">
+      <h1>The Tasks</h1>
+      <div data-bind="foreach: tasks" class="list-group col-sm-5">
+        <h3 data-bind="text: description, click:$root.modifyTask"></h3>
+        <p data-bind="text: status, click:$root.modifyTask"></p>
+        <p data-bind="text: assignedTo, click:$root.modifyTask"></p>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+    <script src="models.js" type="text/javascript"></script>
+    <script src="site.js" type="text/javascript"></script>
+  </body>
+</html>

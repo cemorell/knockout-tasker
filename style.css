@@ -1,0 +1,55 @@
+@keyframes morell {
+  0% {
+    left: 1200px;
+    top: 200px; }
+  60% {
+    left: 0px;
+    top: 200px; }
+  100% {
+    left: 0px;
+    top: 0px; } }
+body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  color: #891717;
+  font-family: "Source Sans Pro", sans-serif; }
+
+ul {
+  padding: 5px 17%; }
+  ul li {
+    display: inline-block;
+    *display: inline;
+    font-size: 21px;
+    padding: 3px 15px;
+    margin: 5px;
+    border: 1px solid #D3D3D3; }
+  ul li:hover {
+    color: blue; }
+
+#hero {
+  background-image: url("images/dinner.jpg");
+  color: #FFFFFF;
+  padding: 17%;
+  margin-bottom: 10px;
+  height: 680px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top left; }
+  #hero h1 {
+    font-size: 72px;
+    line-height: 18px;
+    position: relative;
+    animation-name: morell;
+    animation-duration: 4s;
+    font-weight: 600; }
+  #hero h2 {
+    font-size: 50px;
+    font-weight: 300; }
+
+.row, #tasks {
+  padding: 100px 150px;
+  text-align: center;
+  border-bottom: 1px solid #D3D3D3; }
+
+/*# sourceMappingURL=style.css.map */
