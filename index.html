@@ -60,7 +60,7 @@
         <div class="form-group">
           <label for="inputLastName3" class="col-sm-4 control-label">Assign to</label>
           <div class="col-sm-8 col-md-6">
-            <select class="form-control" data-bind="options: $root.members, optionsText: 'fullName', value: assignedTo.firstName"></select>
+            <select class="form-control" data-bind="options: $root.members, optionsText: 'fullName', optionsValue: 'fullName', value: assignedTo"></select>
           </div>
         </div>
         <div class="form-group">
@@ -74,7 +74,7 @@
     <!-- Each Task -->
      <div id="tasks">
       <h1>The Tasks</h1>
-      <div data-bind="foreach: tasks" class="list-group col-sm-5">
+      <div data-bind="foreach: tasks">
         <h3 data-bind="text: description, click:$root.modifyTask"></h3>
         <p data-bind="text: status, click:$root.modifyTask"></p>
         <p data-bind="text: assignedTo, click:$root.modifyTask"></p>
